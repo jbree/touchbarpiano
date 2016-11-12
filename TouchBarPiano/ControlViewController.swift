@@ -11,8 +11,7 @@ import Cocoa
 @available(OSX 10.12.1, *)
 class ControlViewController: NSViewController, NSTouchBarDelegate {
 
-    let pianoBarController = PianoBarController()
-
+    let pianoBarViewController = PianoBarViewController(nibName: "PianoBarViewController", bundle: nil)!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +39,7 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
         if identifier == touchBarPianoItem {
             let pianoViewBarItem = NSCustomTouchBarItem(identifier: touchBarPianoItem)
 
-            pianoViewBarItem.view = pianoBarController.pianoView
+            pianoViewBarItem.view = pianoBarViewController.view
 
             return pianoViewBarItem
         }
