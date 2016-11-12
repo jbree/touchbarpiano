@@ -11,6 +11,10 @@
 		406309421DD6C01A0045869F /* BasicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309411DD6C01A0045869F /* BasicKey.swift */; };
 		406309461DD6CE060045869F /* SolidColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309451DD6CE060045869F /* SolidColorView.swift */; };
 		406309481DD6CF2A0045869F /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309471DD6CF2A0045869F /* PianoView.swift */; };
+		406309521DD76CA10045869F /* VirtualMidiDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309511DD76CA10045869F /* VirtualMidiDevice.swift */; };
+		406309561DD76EB00045869F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309551DD76EB00045869F /* Note.swift */; };
+		406309581DD7798F0045869F /* PianoBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309571DD7798F0045869F /* PianoBarController.swift */; };
+		4063095A1DD78A9E0045869F /* PlainRoundedRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309591DD78A9E0045869F /* PlainRoundedRectButton.swift */; };
 		40744B551DD6B70100A1690B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40744B541DD6B70100A1690B /* AppDelegate.swift */; };
 		40744B591DD6B70100A1690B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40744B581DD6B70100A1690B /* Assets.xcassets */; };
 		40744B5C1DD6B70100A1690B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40744B5A1DD6B70100A1690B /* Main.storyboard */; };
@@ -21,6 +25,10 @@
 		406309411DD6C01A0045869F /* BasicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicKey.swift; sourceTree = "<group>"; };
 		406309451DD6CE060045869F /* SolidColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidColorView.swift; sourceTree = "<group>"; };
 		406309471DD6CF2A0045869F /* PianoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
+		406309511DD76CA10045869F /* VirtualMidiDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualMidiDevice.swift; sourceTree = "<group>"; };
+		406309551DD76EB00045869F /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		406309571DD7798F0045869F /* PianoBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoBarController.swift; sourceTree = "<group>"; };
+		406309591DD78A9E0045869F /* PlainRoundedRectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainRoundedRectButton.swift; sourceTree = "<group>"; };
 		40744B511DD6B70100A1690B /* TouchBarPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchBarPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40744B541DD6B70100A1690B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40744B581DD6B70100A1690B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +47,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		406309531DD76CAE0045869F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40744B581DD6B70100A1690B /* Assets.xcassets */,
+				40744B5D1DD6B70100A1690B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		406309541DD76CD10045869F /* MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				406309511DD76CA10045869F /* VirtualMidiDevice.swift */,
+				406309551DD76EB00045869F /* Note.swift */,
+			);
+			name = MIDI;
+			sourceTree = "<group>";
+		};
 		40744B481DD6B70100A1690B = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +84,16 @@
 		40744B531DD6B70100A1690B /* TouchBarPiano */ = {
 			isa = PBXGroup;
 			children = (
+				406309531DD76CAE0045869F /* Supporting Files */,
+				40744B5A1DD6B70100A1690B /* Main.storyboard */,
+				406309541DD76CD10045869F /* MIDI */,
 				406309411DD6C01A0045869F /* BasicKey.swift */,
+				406309571DD7798F0045869F /* PianoBarController.swift */,
 				406309471DD6CF2A0045869F /* PianoView.swift */,
 				40744B541DD6B70100A1690B /* AppDelegate.swift */,
 				4063093F1DD6BE1D0045869F /* ControlViewController.swift */,
-				40744B581DD6B70100A1690B /* Assets.xcassets */,
-				40744B5A1DD6B70100A1690B /* Main.storyboard */,
+				406309591DD78A9E0045869F /* PlainRoundedRectButton.swift */,
 				406309451DD6CE060045869F /* SolidColorView.swift */,
-				40744B5D1DD6B70100A1690B /* Info.plist */,
 			);
 			path = TouchBarPiano;
 			sourceTree = "<group>";
@@ -142,8 +170,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406309521DD76CA10045869F /* VirtualMidiDevice.swift in Sources */,
 				406309461DD6CE060045869F /* SolidColorView.swift in Sources */,
 				406309421DD6C01A0045869F /* BasicKey.swift in Sources */,
+				406309581DD7798F0045869F /* PianoBarController.swift in Sources */,
+				4063095A1DD78A9E0045869F /* PlainRoundedRectButton.swift in Sources */,
+				406309561DD76EB00045869F /* Note.swift in Sources */,
 				40744B551DD6B70100A1690B /* AppDelegate.swift in Sources */,
 				406309481DD6CF2A0045869F /* PianoView.swift in Sources */,
 				406309401DD6BE1D0045869F /* ControlViewController.swift in Sources */,
