@@ -8,12 +8,40 @@
 
 import Cocoa
 
+@available(OSX 10.12.1, *)
 class BasicKey: NSView {
 
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
+    // key press closure
+    var onKeyPress: ((NSView) -> (Void))?
 
-        // Drawing code here.
+    // key release closure
+    var onKeyRelease: ((NSView) -> (Void))?
+
+    // key slide/pitch bend closure
+    var onKeySlide: ((NSView, CGFloat) -> (Void))?
+
+    var touch:NSTouch?
+
+    override func touchesBegan(with event: NSEvent) {
+        touch = event.touches(matching: .began, in: self).first
+        onKeyPress?(self)
+    }
+
+    override func touchesMoved(with event: NSEvent) {
+        if let move = event.touches(matching:.moved, in: self).first {
+            let diff = move.location(in: self).x - touch!.location(in: self).x
+            onKeySlide?(self, diff)
+        }
+    }
+
+    override func touchesEnded(with event: NSEvent) {
+        onKeyRelease?(self)
+        touch = nil
+    }
+
+    override func touchesCancelled(with event: NSEvent) {
+        onKeyRelease?(self)
+        touch = nil
     }
     
 }
