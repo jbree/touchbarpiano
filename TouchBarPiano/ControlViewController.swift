@@ -8,10 +8,17 @@
 
 import Cocoa
 
+@available(OSX 10.12.1, *)
 class ControlViewController: NSViewController {
+
+    @IBOutlet weak var pianoView: PianoView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        pianoView.touchedKeys = [0, 3, 7]
+        pianoView.setNeedsDisplay(pianoView.bounds)
+
 
         // Do any additional setup after loading the view.
     }
