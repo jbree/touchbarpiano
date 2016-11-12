@@ -9,6 +9,7 @@
 import Cocoa
 
 @available(OSX 10.12.1, *)
+@IBDesignable
 class PianoView: NSView {
     
     private let numberOfKeys = 12
