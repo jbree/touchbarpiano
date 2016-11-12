@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		406309401DD6BE1D0045869F /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063093F1DD6BE1D0045869F /* ControlViewController.swift */; };
+		406309421DD6C01A0045869F /* BasicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406309411DD6C01A0045869F /* BasicKey.swift */; };
 		40744B551DD6B70100A1690B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40744B541DD6B70100A1690B /* AppDelegate.swift */; };
-		40744B571DD6B70100A1690B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40744B561DD6B70100A1690B /* ViewController.swift */; };
 		40744B591DD6B70100A1690B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40744B581DD6B70100A1690B /* Assets.xcassets */; };
 		40744B5C1DD6B70100A1690B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40744B5A1DD6B70100A1690B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4063093F1DD6BE1D0045869F /* ControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
+		406309411DD6C01A0045869F /* BasicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicKey.swift; sourceTree = "<group>"; };
 		40744B511DD6B70100A1690B /* TouchBarPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchBarPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40744B541DD6B70100A1690B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40744B561DD6B70100A1690B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40744B581DD6B70100A1690B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40744B5B1DD6B70100A1690B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40744B5D1DD6B70100A1690B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,8 +54,9 @@
 		40744B531DD6B70100A1690B /* TouchBarPiano */ = {
 			isa = PBXGroup;
 			children = (
+				406309411DD6C01A0045869F /* BasicKey.swift */,
 				40744B541DD6B70100A1690B /* AppDelegate.swift */,
-				40744B561DD6B70100A1690B /* ViewController.swift */,
+				4063093F1DD6BE1D0045869F /* ControlViewController.swift */,
 				40744B581DD6B70100A1690B /* Assets.xcassets */,
 				40744B5A1DD6B70100A1690B /* Main.storyboard */,
 				40744B5D1DD6B70100A1690B /* Info.plist */,
@@ -133,8 +136,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40744B571DD6B70100A1690B /* ViewController.swift in Sources */,
+				406309421DD6C01A0045869F /* BasicKey.swift in Sources */,
 				40744B551DD6B70100A1690B /* AppDelegate.swift in Sources */,
+				406309401DD6BE1D0045869F /* ControlViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +293,7 @@
 				40744B621DD6B70100A1690B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
