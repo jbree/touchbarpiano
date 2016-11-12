@@ -683,28 +683,65 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ControlViewController" customModule="TouchBarPiano" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="725" height="209"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-S8-KoT" customClass="SolidColorView" customModule="TouchBarPiano" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tXk-ya-YH5">
+                                <rect key="frame" x="20" y="20" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Qdp-Rn-toY"/>
+                                    <constraint firstAttribute="height" constant="56" id="hhs-yj-rha"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Z" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gRz-vU-eYB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">z</string>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7jt-rO-RVx">
+                                <rect key="frame" x="86" y="20" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="NFR-lo-Yfx"/>
+                                    <constraint firstAttribute="width" constant="56" id="qcH-BV-zhk"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="X" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J8z-jz-Ak4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">x</string>
+                                </buttonCell>
+                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Z8b-HC-w9r" customClass="SolidColorView" customModule="TouchBarPiano" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="167" width="725" height="42"/>
                                 <subviews>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="86c-qb-FVJ" customClass="PianoView" customModule="TouchBarPiano" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="154" width="440" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="HLo-eS-w0d" customClass="PianoView" customModule="TouchBarPiano" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="685" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Sd9-iB-H2l"/>
+                                        </constraints>
                                     </customView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HLo-eS-w0d" secondAttribute="trailing" constant="20" id="12B-io-ejQ"/>
+                                    <constraint firstItem="HLo-eS-w0d" firstAttribute="leading" secondItem="Z8b-HC-w9r" secondAttribute="leading" constant="20" id="6o9-WB-Kyc"/>
+                                    <constraint firstAttribute="bottom" secondItem="HLo-eS-w0d" secondAttribute="bottom" id="Mvw-Gf-u5q"/>
+                                    <constraint firstAttribute="height" constant="42" id="OMo-N0-4ay"/>
+                                </constraints>
                             </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7jt-rO-RVx" secondAttribute="bottom" constant="20" id="ESs-cb-KFh"/>
+                            <constraint firstItem="tXk-ya-YH5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Vny-5G-TUP"/>
+                            <constraint firstAttribute="bottom" secondItem="tXk-ya-YH5" secondAttribute="bottom" constant="20" id="ZYb-K8-Kix"/>
+                            <constraint firstItem="Z8b-HC-w9r" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="aj3-QI-5hN"/>
+                            <constraint firstAttribute="trailing" secondItem="Z8b-HC-w9r" secondAttribute="trailing" id="eiu-qu-W0V"/>
+                            <constraint firstItem="Z8b-HC-w9r" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="mnC-2i-Nep"/>
+                            <constraint firstItem="7jt-rO-RVx" firstAttribute="leading" secondItem="tXk-ya-YH5" secondAttribute="trailing" constant="10" id="tL4-J0-6vv"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="pianoView" destination="86c-qb-FVJ" id="0m9-ew-Nkx"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="163.5" y="649.5"/>
         </scene>
     </scenes>
 </document>
