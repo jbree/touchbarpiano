@@ -9,16 +9,12 @@
 import Cocoa
 
 @available(OSX 10.12.1, *)
-class ControlViewController: NSViewController {
+class ControlViewController: NSViewController, NSTouchBarDelegate {
 
-    @IBOutlet weak var pianoView: PianoView!
+    let pianoBarController = PianoBarController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        pianoView.touchedKeys = [0, 3, 7]
-        pianoView.setNeedsDisplay(pianoView.bounds)
-
 
         // Do any additional setup after loading the view.
     }
@@ -27,6 +23,29 @@ class ControlViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+
+    private let touchBarPianoItem = NSTouchBarItemIdentifier("com.MIDIBar.pianoBar")
+
+    @available(OSX 10.12.1, *)
+    override func makeTouchBar() -> NSTouchBar? {
+        let pianoBar = NSTouchBar()
+        pianoBar.delegate = self
+        pianoBar.defaultItemIdentifiers = [touchBarPianoItem, .otherItemsProxy]
+
+        return pianoBar
+    }
+
+    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItemIdentifier) -> NSTouchBarItem? {
+        if identifier == touchBarPianoItem {
+            let pianoViewBarItem = NSCustomTouchBarItem(identifier: touchBarPianoItem)
+
+            pianoViewBarItem.view = pianoBarController.pianoView
+
+            return pianoViewBarItem
+        }
+        
+        return nil
     }
 
 
