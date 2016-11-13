@@ -678,41 +678,6 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Piano Bar Controller-->
-        <scene sceneID="usT-6m-SVK">
-            <objects>
-                <viewController id="L0q-uh-g8b" customClass="PianoBarController" customModule="TouchBarPiano" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="B04-9q-cm5">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="byz-Lg-Cdg">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="lzn-fR-Yf3" customClass="PianoView" customModule="TouchBarPiano" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                    </customView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="lzn-fR-Yf3" firstAttribute="leading" secondItem="byz-Lg-Cdg" secondAttribute="leading" id="HPV-nT-Qaf"/>
-                                    <constraint firstItem="lzn-fR-Yf3" firstAttribute="top" secondItem="byz-Lg-Cdg" secondAttribute="top" id="Sac-2g-rSp"/>
-                                    <constraint firstAttribute="bottom" secondItem="lzn-fR-Yf3" secondAttribute="bottom" id="tGO-oG-hdX"/>
-                                    <constraint firstAttribute="trailing" secondItem="lzn-fR-Yf3" secondAttribute="trailing" id="uEe-vT-JRt"/>
-                                </constraints>
-                            </customView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="byz-Lg-Cdg" firstAttribute="top" secondItem="B04-9q-cm5" secondAttribute="top" id="TkM-Td-Ncb"/>
-                            <constraint firstAttribute="bottom" secondItem="byz-Lg-Cdg" secondAttribute="bottom" id="bC1-wy-qPk"/>
-                            <constraint firstAttribute="trailing" secondItem="byz-Lg-Cdg" secondAttribute="trailing" id="tw8-NN-k7k"/>
-                            <constraint firstItem="byz-Lg-Cdg" firstAttribute="leading" secondItem="B04-9q-cm5" secondAttribute="leading" id="xxq-wn-SNn"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="ha5-st-v5G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="798" y="275"/>
-        </scene>
         <!--Control View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
