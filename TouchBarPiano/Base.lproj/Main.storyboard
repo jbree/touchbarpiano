@@ -697,6 +697,9 @@
                                     <font key="font" metaFont="system" size="32"/>
                                     <string key="keyEquivalent">z</string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="decreaseOctave:" target="XfG-lQ-9wD" id="qaH-gV-1cp"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7jt-rO-RVx">
                                 <rect key="frame" x="86" y="20" width="56" height="56"/>
@@ -709,6 +712,9 @@
                                     <font key="font" metaFont="system" size="32"/>
                                     <string key="keyEquivalent">x</string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="increaseOctave:" target="XfG-lQ-9wD" id="YGj-rY-YBa"/>
+                                </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Z8b-HC-w9r" customClass="SolidColorView" customModule="TouchBarPiano" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="167" width="725" height="42"/>
@@ -751,6 +757,11 @@
                             <constraint firstItem="7jt-rO-RVx" firstAttribute="leading" secondItem="tXk-ya-YH5" secondAttribute="trailing" constant="10" id="tL4-J0-6vv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="decreaseOctaveButton" destination="tXk-ya-YH5" id="ofY-JQ-Pit"/>
+                        <outlet property="increaseOctaveButton" destination="7jt-rO-RVx" id="Fkp-qr-Ehh"/>
+                        <outlet property="octaveLabel" destination="e9q-E4-bP6" id="6cq-db-oto"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

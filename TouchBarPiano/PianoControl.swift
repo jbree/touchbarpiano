@@ -20,11 +20,15 @@ class PianoControl: PianoView {
     func touch(key: Int) {
         touchedKeys.insert(key)
         onKeyPress?(key)
+        // TODO: optimize bounds for key pressed
+        setNeedsDisplay(bounds)
     }
 
     func release(key: Int) {
         touchedKeys.remove(key)
         onKeyRelease?(key)
+        // TODO: optimize bounds for key released
+        setNeedsDisplay(bounds)
     }
 
     

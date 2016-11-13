@@ -15,7 +15,25 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
     let midiDevice = VirtualMidiDevice()
     var currentNotes = [Int:Note]()
 
-    var octave = 4
+    var octave = 0 {
+        didSet {
+            if octave < 2 {
+                octave = 1
+                decreaseOctaveButton.isEnabled = false
+            } else {
+                decreaseOctaveButton.isEnabled = true
+
+                if octave > 8 {
+                    octave = 9
+                    increaseOctaveButton.isEnabled = false
+                } else {
+                    increaseOctaveButton.isEnabled = true
+                }
+            }
+
+            octaveLabel.stringValue = "\(octave)"
+        }
+    }
 
     // defines how multiple touches are handled
     var touchMode = TouchMode.monophonic
@@ -25,6 +43,9 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // TODO: load and store in defaults
+        octave = 4
 
         // Do any additional setup after loading the view.
         midiDevice.enabled = true
@@ -51,6 +72,23 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
         // Update the view, if already loaded.
         }
     }
+
+    // MARK: - Musical Control & Status
+
+    @IBOutlet weak var decreaseOctaveButton: NSButton!
+    @IBOutlet weak var increaseOctaveButton: NSButton!
+    @IBOutlet weak var octaveLabel: NSTextField!
+
+    @IBAction func decreaseOctave(_ sender: Any) {
+        octave -= 1
+    }
+
+    @IBAction func increaseOctave(_ sender: Any) {
+        octave += 1
+    }
+
+
+    // MARK: - TouchBar methods
 
     private let touchBarPianoItem = NSTouchBarItemIdentifier("com.MIDIBar.pianoBar")
 
