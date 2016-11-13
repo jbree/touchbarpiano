@@ -12,7 +12,7 @@ import Cocoa
 @IBDesignable
 class PianoView: NSView {
     
-    private let numberOfKeys = 12
+    let numberOfKeys = 12
 
     private let blackKeyHeight = CGFloat(26.0)
 
@@ -38,7 +38,7 @@ class PianoView: NSView {
         }
     }
 
-    var touchedKeys = [Int]()
+    var touchedKeys = Set<Int>()
 
     enum KeyType {
         case black

@@ -8,14 +8,24 @@
 
 import Cocoa
 
-class PianoControl: NSView {
-
-    var numberOfKeys = 12
+@available (OSX 10.12.1, *)
+class PianoControl: PianoView {
 
     var onKeyPress: ((Int) -> Void)?
 
     var onKeyRelease: ((Int) -> Void)?
 
     var onKeySlide: ((Double) -> Void)?
+
+    func touch(key: Int) {
+        touchedKeys.insert(key)
+        onKeyPress?(key)
+    }
+
+    func release(key: Int) {
+        touchedKeys.remove(key)
+        onKeyRelease?(key)
+    }
+
     
 }
