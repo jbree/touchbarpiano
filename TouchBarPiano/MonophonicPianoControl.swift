@@ -12,6 +12,8 @@ class MonophonicPianoControl: PianoControl {
 
     var currentTouch:NSTouch?
 
+    var dragMode = DragMode.slide
+
     @available(OSX 10.12.1, *)
     func key(forTouch touch:NSTouch) -> Int {
         let keyWidth = bounds.width / CGFloat(numberOfKeys)
@@ -36,8 +38,23 @@ class MonophonicPianoControl: PianoControl {
         if #available(OSX 10.12.1, *) {
             if let touch = event.touches(matching: .moved, in: self).first {
                 if currentTouch != nil, touch.identity.isEqual(currentTouch!.identity) {
-                    let offset = currentTouch!.location(in: self).x - touch.location(in: self).x
-                    onKeySlide?(Double(offset))
+                    switch dragMode {
+                    case .bend:
+                        let offset = currentTouch!.location(in: self).x - touch.location(in: self).x
+                        onKeySlide?(Double(offset))
+                    case .release:
+                        if key(forTouch: touch) != key(forTouch: currentTouch!) {
+                            onKeyRelease?(key(forTouch: currentTouch!))
+                        }
+                    case .slide:
+                        if key(forTouch: touch) != key(forTouch: currentTouch!) {
+                            onKeyRelease?(key(forTouch: currentTouch!))
+                            currentTouch = touch
+                            onKeyPress?(key(forTouch: currentTouch!))
+                        }
+                    case .ignore:
+                        break
+                    }
                 }
             }
         } else {
@@ -53,6 +70,15 @@ class MonophonicPianoControl: PianoControl {
                     // Fallback on earlier versions
             } else {
                 // handle it
+            }
+        }
+        currentTouch = nil
+    }
+
+    override func touchesCancelled(with event: NSEvent) {
+        if #available(OSX 10.12.1, *) {
+            if currentTouch != nil {
+                onKeyRelease?(key(forTouch: currentTouch!))
             }
         }
         currentTouch = nil
