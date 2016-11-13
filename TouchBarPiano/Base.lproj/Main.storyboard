@@ -694,7 +694,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Z" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gRz-vU-eYB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="32"/>
                                     <string key="keyEquivalent">z</string>
                                 </buttonCell>
                             </button>
@@ -706,7 +706,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="X" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J8z-jz-Ak4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="32"/>
                                     <string key="keyEquivalent">x</string>
                                 </buttonCell>
                             </button>
@@ -727,10 +727,23 @@
                                     <constraint firstAttribute="height" constant="42" id="OMo-N0-4ay"/>
                                 </constraints>
                             </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9q-E4-bP6">
+                                <rect key="frame" x="150" y="28" width="60" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="IgH-1E-cWY"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="#" id="g1O-pw-t6w">
+                                    <font key="font" metaFont="system" size="32"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="e9q-E4-bP6" secondAttribute="bottom" constant="28" id="0zr-16-ZHT"/>
                             <constraint firstAttribute="bottom" secondItem="7jt-rO-RVx" secondAttribute="bottom" constant="20" id="ESs-cb-KFh"/>
                             <constraint firstItem="tXk-ya-YH5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Vny-5G-TUP"/>
+                            <constraint firstItem="e9q-E4-bP6" firstAttribute="leading" secondItem="7jt-rO-RVx" secondAttribute="trailing" constant="10" id="XOv-dK-6ak"/>
                             <constraint firstAttribute="bottom" secondItem="tXk-ya-YH5" secondAttribute="bottom" constant="20" id="ZYb-K8-Kix"/>
                             <constraint firstItem="Z8b-HC-w9r" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="aj3-QI-5hN"/>
                             <constraint firstAttribute="trailing" secondItem="Z8b-HC-w9r" secondAttribute="trailing" id="eiu-qu-W0V"/>
