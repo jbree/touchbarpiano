@@ -13,6 +13,16 @@ class PianoBarViewController: NSViewController {
 
     @IBOutlet weak var pianoView: PianoView!
 
+    var octave: Int = 4 {
+        didSet {
+            octave = octave > 0 ? (octave < 8 ? octave : 8) : 0
+        }
+    }
+
+    let midiDevice = VirtualMidiDevice()
+
+    var currentNotes = [Int:Note]()
+
     var pianoControl: PianoControl? {
         willSet {
             if newValue != pianoControl {
@@ -42,13 +52,22 @@ class PianoBarViewController: NSViewController {
         // Do view setup here.
 
         setupMonophonicKeys()
+        midiDevice.enabled = true
 
         pianoControl?.onKeyPress = {
-            print("key \($0) press")
+            print ("key \($0) down")
+            let midi = $0 + 12 * self.octave
+            let note = Note(withMidiNumber: UInt8(midi))
+            self.currentNotes[$0] = note
+            self.midiDevice.send(note: note, command: .on)
         }
 
         pianoControl?.onKeyRelease = {
             print("key \($0) release")
+            if let note = self.currentNotes[$0] {
+                self.midiDevice.send(note:note, command: .off)
+                self.currentNotes[$0] = nil
+            }
         }
     }
 
