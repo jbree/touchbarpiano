@@ -39,7 +39,7 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
     var touchMode = TouchMode.monophonic
 
     // defines how the keys respond when dragged left to right
-    var dragMode = DragMode.bend
+    var dragMode = DragMode.slide
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
         midiDevice.enabled = true
 
         piano.onKeyPress = {
-            print ("key \($0) down")
+//            print ("key \($0) down")
             let midi = $0 + 12 * self.octave
             let note = Note(withMidiNumber: UInt8(midi))
             self.currentNotes[$0] = note
@@ -59,17 +59,11 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
         }
 
         piano.onKeyRelease = {
-            print("key \($0) release")
+//            print("key \($0) release")
             if let note = self.currentNotes[$0] {
                 self.midiDevice.send(note:note, command: .off)
                 self.currentNotes[$0] = nil
             }
-        }
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
         }
     }
 
