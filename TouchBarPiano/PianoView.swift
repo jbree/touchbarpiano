@@ -30,9 +30,9 @@ class PianoView: NSView {
 
     private let cornerRadius = CGFloat(13.0)
 
-    private let spacing = CGFloat(1.0)
+    private let keySpacing = CGFloat(1.0)
 
-    private var keyWidth:CGFloat {
+    var keyWidth:CGFloat {
         get {
             return bounds.width / CGFloat(numberOfKeys)
         }
@@ -67,9 +67,9 @@ class PianoView: NSView {
         for keyNumber in touchedKeys {
             if keyType[keyNumber] == .black {
                 // paint a gradient
-                let keyRect = NSRect(x: keyWidth * CGFloat(keyNumber) - spacing,
+                let keyRect = NSRect(x: keyWidth * CGFloat(keyNumber) - keySpacing,
                                      y: bounds.height - blackKeyHeight,
-                                     width: keyWidth + spacing * 2.0,
+                                     width: keyWidth + keySpacing * 2.0,
                                      height: blackKeyHeight * 1.2)
                 let gradient = NSGradient(starting: selectedBlackColor, ending: backgroundColor)
                 gradient?.draw(in: keyRect, angle: 90)
@@ -82,9 +82,9 @@ class PianoView: NSView {
                 continue
             }
 
-            let left = keyWidth * CGFloat(keyNumber) + spacing
+            let left = keyWidth * CGFloat(keyNumber) + keySpacing
             let effectiveLeft = left + cornerRadius
-            let right = keyWidth * CGFloat(keyNumber) + keyWidth - spacing
+            let right = keyWidth * CGFloat(keyNumber) + keyWidth - keySpacing
             let effectiveRight = right - cornerRadius
 
             let path = NSBezierPath()
