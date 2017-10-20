@@ -20,6 +20,7 @@
 		40744B551DD6B70100A1690B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40744B541DD6B70100A1690B /* AppDelegate.swift */; };
 		40744B591DD6B70100A1690B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40744B581DD6B70100A1690B /* Assets.xcassets */; };
 		40744B5C1DD6B70100A1690B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40744B5A1DD6B70100A1690B /* Main.storyboard */; };
+		408860E51F9AB6EC007748A3 /* FirstResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408860E41F9AB6EB007748A3 /* FirstResponderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		40744B581DD6B70100A1690B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40744B5B1DD6B70100A1690B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40744B5D1DD6B70100A1690B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		408860E41F9AB6EB007748A3 /* FirstResponderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstResponderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		40744B531DD6B70100A1690B /* TouchBarPiano */ = {
 			isa = PBXGroup;
 			children = (
+				408860E41F9AB6EB007748A3 /* FirstResponderView.swift */,
 				406309531DD76CAE0045869F /* Supporting Files */,
 				40744B5A1DD6B70100A1690B /* Main.storyboard */,
 				406309631DD7C4600045869F /* PianoModes.swift */,
@@ -184,6 +187,7 @@
 				406309561DD76EB00045869F /* Note.swift in Sources */,
 				40744B551DD6B70100A1690B /* AppDelegate.swift in Sources */,
 				406309481DD6CF2A0045869F /* PianoView.swift in Sources */,
+				408860E51F9AB6EC007748A3 /* FirstResponderView.swift in Sources */,
 				406309401DD6BE1D0045869F /* ControlViewController.swift in Sources */,
 				406309641DD7C4600045869F /* PianoModes.swift in Sources */,
 				406309601DD7AB590045869F /* PianoControl.swift in Sources */,
@@ -302,6 +306,7 @@
 				DEVELOPMENT_TEAM = HM6E7UAVJN;
 				INFOPLIST_FILE = TouchBarPiano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = jbreeden.TouchBarPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -316,6 +321,7 @@
 				DEVELOPMENT_TEAM = HM6E7UAVJN;
 				INFOPLIST_FILE = TouchBarPiano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = jbreeden.TouchBarPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

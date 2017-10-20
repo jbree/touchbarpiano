@@ -18,6 +18,9 @@ class PianoControl: PianoView {
     var onKeySlide: ((Double) -> Void)?
 
     func touch(key: Int) {
+        guard key >= 0 && key < 12 else {
+            return
+        }
         touchedKeys.insert(key)
         onKeyPress?(key)
         // TODO: optimize bounds for key pressed

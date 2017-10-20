@@ -65,6 +65,9 @@ class PianoView: NSView {
         let blackEffectiveBottom = CGFloat(blackBottom + cornerRadius)
 
         for keyNumber in touchedKeys {
+            if keyNumber < 0 || keyNumber >= numberOfKeys {
+                break
+            }
             if keyType[keyNumber] == .black {
                 // paint a gradient
                 let keyRect = NSRect(x: keyWidth * CGFloat(keyNumber) - keySpacing,

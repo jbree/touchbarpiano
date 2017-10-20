@@ -8,7 +8,7 @@
 
 import Cocoa
 
-@available(OSX 10.12.1, *)
+@available(OSX 10.12.2, *)
 class ControlViewController: NSViewController, NSTouchBarDelegate {
 
     let piano:PianoControl = MonophonicPianoControl()
@@ -86,7 +86,7 @@ class ControlViewController: NSViewController, NSTouchBarDelegate {
 
     private let touchBarPianoItem = NSTouchBarItemIdentifier("com.MIDIBar.pianoBar")
 
-    @available(OSX 10.12.1, *)
+    @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
         let pianoBar = NSTouchBar()
         pianoBar.delegate = self

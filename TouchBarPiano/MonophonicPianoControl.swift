@@ -8,14 +8,13 @@
 
 import Cocoa
 
-@available(OSX 10.12.1, *)
+@available(OSX 10.12.2, *)
 class MonophonicPianoControl: PianoControl {
 
     var currentTouch:NSTouch?
 
     var dragMode = DragMode.slide
 
-    @available(OSX 10.12.1, *)
     func key(forTouch touch:NSTouch) -> Int {
         let keyWidth = bounds.width / CGFloat(numberOfKeys)
         let position = touch.location(in: self).x
